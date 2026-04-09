@@ -55,6 +55,6 @@ The lab utilizes an isolated **Internal Network** (SOC-LAN) to ensure all traffi
 ---
 
 ##  Troubleshooting
-* **pfSense:** Resetting the admin password to default, changed it, put in password keeper
+* **pfSense:** Resolved a GUI lockout by utilizing the console's password reset/service restart utility (Option 3/11).
 * **
 

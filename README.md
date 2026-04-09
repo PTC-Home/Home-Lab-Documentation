@@ -54,6 +54,12 @@ The lab utilizes an isolated **Internal Network** (SOC-LAN) to ensure all traffi
 
 ---
 
+##  Wazuh Install
+* **Quick-Start:** `curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash wazuh-install.sh -a`, takes about 5-15 minutes
+* **Admin-Password:** given at the end of install 
+
+---
+
 ##  Troubleshooting
 * **pfSense:** Resolved a GUI lockout by utilizing the console's password reset/service restart utility (Option 3/11).
 * **

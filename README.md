@@ -54,13 +54,21 @@ The lab utilizes an isolated **Internal Network** (SOC-LAN) to ensure all traffi
 
 ---
 
+## pfSense Install
+* **Installation:** Smooth Install with no issues
+* **Lock-out resolved:** Password reset on Console's GUI 
+
+---
+
 ##  Wazuh Install
 * **Quick-Start:** `curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash wazuh-install.sh -a`, takes about 5-15 minutes
-* **Admin-Password:** given at the end of install 
+* **Admin-Password:** Issue with password after install fixed  
 
 ---
 
 ##  Troubleshooting
-* **pfSense:** Resolved a GUI lockout by utilizing the console's password reset/service restart utility (Option 3/11).
-* **
+* **pfSense:** Resolved a GUI lockout by utilizing the console's password reset/service restart utility (Option 3/16).
+* **Wazuh:** Manually invoked the wazuh-passwords-tool.sh utility via absolute pathing to force-update the admin cryptographic hash.
+
+
 

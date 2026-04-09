@@ -27,9 +27,9 @@ The lab utilizes an isolated **Internal Network** (SOC-LAN) to ensure all traffi
 | Machine | IP Address | Role |
 | :--- | :--- | :--- |
 | **pfSense** | `192.168.1.1` | Default Gateway / DNS |
-| **Wazuh Server** | `192.168.1.2` | Central Log Collector |
+| **Wazuh Server** | `192.168.1.102` | Central Log Collector |
 | **Nextcloud** | `192.168.1.10` | Linux Data Target |
-| **Windows 11** | `192.168.1.20` | Enterprise Workstation |
+| **Windows 11** | `192.168.1.101` | Enterprise Workstation |
 | **Kali Linux** | `192.168.1.50` | Attacker / Management |
 
 ---

@@ -52,4 +52,9 @@ The lab utilizes an isolated **Internal Network** (SOC-LAN) to ensure all traffi
 * `04-Attack-Simulation/`: Documentation of brute-force and vulnerability scans.
 * `05-Defensive-Results/`: Evidence of automated blocks and incident alerts.
 
+---
+
+##  Troubleshooting
+* **pfSense:** Resetting the admin password to default, changed it, put in password keeper
+* **
 

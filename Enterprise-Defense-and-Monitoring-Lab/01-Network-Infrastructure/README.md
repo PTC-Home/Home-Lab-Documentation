@@ -17,7 +17,7 @@ The environment is divided into two distinct security zones:
 | **pfSense Gateway** | SOC-LAN | `192.168.1.1` |
 | **Wazuh Manager** | SOC-LAN | `192.168.1.102` |
 | **Windows 11 WS** | SOC-LAN | `192.168.1.101` |
-| **Nextcloud Server** | SOC-LAN | `192.168.1.4` |
+| **Nextcloud Server** | SOC-LAN | `192.168.1.103` |
 
 ---
 

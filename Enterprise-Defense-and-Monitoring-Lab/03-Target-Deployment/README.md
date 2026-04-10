@@ -10,7 +10,7 @@ To deploy a functional Private Cloud instance (Nextcloud) to serve as the primar
 * **Web Server:** Apache2
 * **Database:** MariaDB (SQL)
 * **Runtime:** PHP 8.3
-* **Network IP:** `192.168.1.4` (Static)
+* **Network IP:** `192.168.1.103` (Static)
 
 ---
 

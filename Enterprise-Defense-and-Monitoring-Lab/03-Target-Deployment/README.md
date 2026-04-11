@@ -25,3 +25,8 @@ To deploy a functional Private Cloud instance (Nextcloud) to serve as the primar
 * `[Placeholder: Nextcloud-Service-Status.png]` - Showing Apache and MariaDB running.
 * `[Placeholder: Nextcloud-Dashboard-Login.png]` - The final functional Nextcloud GUI.
 🛠️ Professional Touch
+
+---
+
+### Installing and updating Ubuntu Server
+For prepreation of working on the installation of Nextcloud, I updated the Ubuntu server and opted out of the snapshot of a premade Nextcloud vm.

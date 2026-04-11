@@ -64,3 +64,15 @@ sudo chown -R www-data:www-data /var/www/html/nextcloud/
 
 ---
 
+### Phase 3: Telemetric Integration (Wazuh Agent Deployment)
+To transform the standalone Nextcloud server into a monitored "Target" within the SOC, the Wazuh security agent was deployed to provide real-time visibility.
+
+**Execution Steps:**
+1. **Dependency Verification:** Confirmed `curl` and `wget` were present for remote package retrieval.
+2. **Agent Provisioning:** Utilized the Wazuh Manager's deployment wizard to generate a unique installation string for the Ubuntu 24.04 (DEB amd64) architecture.
+3. **Manager Alignment:** Pointed the agent to the Manager IP (`192.168.1.102`) and assigned the hostname `Nextcloud-Server-01`.
+4. **Service Persistence:** Enabled the agent via `systemctl` to ensure monitoring survives system reboots.
+
+> [!TIP]
+> **Security Outcome:**
+> The server now provides active File Integrity Monitoring (FIM). Any unauthorized changes to sensitive Nextcloud configuration files (like `config.php`) will trigger a Level 7+ alert on the Wazuh dashboard.

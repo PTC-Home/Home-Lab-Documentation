@@ -73,6 +73,11 @@ To transform the standalone Nextcloud server into a monitored "Target" within th
 3. **Manager Alignment:** Pointed the agent to the Manager IP (`192.168.1.102`) and assigned the hostname `Nextcloud-Server-01`.
 4. **Service Persistence:** Enabled the agent via `systemctl` to ensure monitoring survives system reboots.
 
+### Network Verification
+Cross-subnet communication was verified from the Windows 11 Management Workstation. 
+* **Target Reachability:** Confirmed HTTP access to the Nextcloud GUI at `192.168.1.103`.
+* **Management Reachability:** Confirmed HTTPS access to the pfSense gateway and Wazuh Manager.
+
 > [!TIP]
 > **Security Outcome:**
 > The server now provides active File Integrity Monitoring (FIM). Any unauthorized changes to sensitive Nextcloud configuration files (like `config.php`) will trigger a Level 7+ alert on the Wazuh dashboard.

@@ -45,3 +45,13 @@ Before deploying the application, the underlying LAMP stack was hardened to redu
 3. **Module Optimization:** Installed specific PHP extensions (`php-imagick`, `php-gmp`, `php-bcmath`) required for enterprise-grade file encryption and processing.
 
 ---
+
+### Phase 2: Database & File System Configuration
+A dedicated MariaDB database was provisioned using the Principle of Least Privilege (PoLP).
+
+**Key Actions:**
+* **Database Isolation:** Created `nextcloud_db` to ensure data segregation from system-level tables.
+* **Service Account:** Provisioned a non-root user (`nc_admin`) with scoped privileges limited strictly to the application database.
+* **Permission Hardening:** Configured recursive ownership of the `/var/www/html/nextcloud` directory to the `www-data` service account, preventing unauthorized file execution by other system users.
+
+---

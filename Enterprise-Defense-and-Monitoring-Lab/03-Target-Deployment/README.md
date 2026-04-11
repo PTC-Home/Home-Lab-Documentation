@@ -14,17 +14,17 @@ To deploy a functional Private Cloud instance (Nextcloud) to serve as the primar
 
 ---
 
-##  Hardening Measures (Phase 1)
+###  Hardening Measures (Phase 1)
 * **Database Isolation:** Manual MariaDB configuration with dedicated non-root users.
 * **Firewall Logic:** Integrated with pfSense to allow only HTTP/HTTPS and SSH from the Management Workstation.
 * **Agent Integration:** Deployment of the Wazuh Agent for File Integrity Monitoring (FIM).
 
 ---
 
-##  Evidence (Batch Upload Pending)
+###  Evidence (Batch Upload Pending)
 * `[Placeholder: Nextcloud-Service-Status.png]` - Showing Apache and MariaDB running.
 * `[Placeholder: Nextcloud-Dashboard-Login.png]` - The final functional Nextcloud GUI.
-🛠️ Professional Touch
+Professional Touch
 
 ---
 

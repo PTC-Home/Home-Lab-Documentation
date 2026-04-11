@@ -54,4 +54,13 @@ A dedicated MariaDB database was provisioned using the Principle of Least Privil
 * **Service Account:** Provisioned a non-root user (`nc_admin`) with scoped privileges limited strictly to the application database.
 * **Permission Hardening:** Configured recursive ownership of the `/var/www/html/nextcloud` directory to the `www-data` service account, preventing unauthorized file execution by other system users.
 
+### 🔑 File System Permissions & Security
+To ensure the application can function while adhering to the **Principle of Least Privilege**, recursive ownership was applied to the web root.
+
+**Command:**
+```bash
+sudo chown -R www-data:www-data /var/www/html/nextcloud/
+```
+
 ---
+

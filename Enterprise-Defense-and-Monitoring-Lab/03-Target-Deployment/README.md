@@ -30,3 +30,18 @@ To deploy a functional Private Cloud instance (Nextcloud) to serve as the primar
 
 ### Installing and updating Ubuntu Server
 For prepreation of working on the installation of Nextcloud, I updated the Ubuntu server and opted out of the snapshot of a premade Nextcloud vm.
+
+---
+
+### Phase 1: Environment & Database Hardening
+Before deploying the application, the underlying LAMP stack was hardened to reduce the attack surface.
+
+**Actions Taken:**
+1. **Service Verification:** Confirmed `apache2` and `mariadb` status via `systemctl`.
+2. **Database Hardening:** Executed `mysql_secure_installation` to:
+    * Disable remote root login.
+    * Remove anonymous user accounts.
+    * Purge the default 'test' database.
+3. **Module Optimization:** Installed specific PHP extensions (`php-imagick`, `php-gmp`, `php-bcmath`) required for enterprise-grade file encryption and processing.
+
+---

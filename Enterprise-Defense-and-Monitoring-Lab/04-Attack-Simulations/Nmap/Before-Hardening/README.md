@@ -21,7 +21,6 @@ The Wazuh Agent on the Nextcloud server monitored the Apache access logs in real
 
 **Evidence of Detection:**
 ![Wazuh Security Flags](Screenshots/wazuh-flags-nmap-scan.png)
-
 *Figure 1: Wazuh Dashboard showing Rule ID 31101 (Web server 400 error code) triggered by Nmap service probing.*
 
 ---
@@ -32,7 +31,9 @@ At this stage, the scan was **successful**. The attacker gained the following in
 * **Technology Stack:** The attacker successfully identified the presence of an Apache Web Server.
 
 **Attacker Viewpoint:**
+
 ![Nmap Port Scan Result](Screenshots/nmap-port-scan.png)
+
 *Figure 2: Terminal output from the attacker's perspective confirming the visibility of the target's internal services.*
 
 ---

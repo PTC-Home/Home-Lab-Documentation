@@ -51,3 +51,56 @@ Had this hardening not been implemented, the **consequences of inaction** would 
 * **Alert Saturation:** The SOC would be overwhelmed by thousands of minor events, potentially masking a real breach attempt happening elsewhere.
 
 By implementing host-level access controls, the **Attack Surface** was successfully reduced by 100% for unauthorized internal actors.
+
+---
+
+## 5. Security of the Management Plane: "Who Watches the Watchers?"
+During the reconnaissance phase, an Nmap scan was directed at the **Wazuh Manager (`192.168.1.102`)**. Because a SIEM (Security Information and Event Management) server must be reachable by its agents, it inherently exposes several service ports. 
+
+### Initial Vulnerability Discovery
+The scan revealed that the Manager was exposing critical management ports to the entire subnet, including:
+* **Port 443 (HTTPS):** The Wazuh Dashboard (Kibana/Indexer).
+* **Port 22 (SSH):** Remote console management.
+* **Port 55000 (API):** The Wazuh management API.
+* **Ports 1514/1515:** Agent registration and log collection.
+
+**Attacker Viewpoint (SOC Manager):**
+
+![Kali Nmap Wazuh Manager Fail](Screenshots/Kali-nmap-wazuh-manager-fail.png)
+
+*Figure 6: Nmap results showing a wide attack surface on the SOC Manager, allowing for potential brute-force or API exploitation.*
+
+---
+
+## 6. Implementation of Management ACLs (Access Control Lists)
+To secure the "Command Center," host-based hardening was applied to the Wazuh Manager using `UFW`. The strategy involved restricting administrative access exclusively to the **Windows 11 Management Workstation**, while still allowing agents to check in from the broader network.
+
+### Hardening Configuration Code:
+```bash
+# Allow only the Admin Workstation to manage the SOC
+sudo ufw allow from 192.168.1.101 to any port 443
+sudo ufw allow from 192.168.1.101 to any port 22
+sudo ufw allow from 192.168.1.101 to any port 55000
+
+# Allow all authorized agents to send telemetry (1514/1515)
+sudo ufw allow from 192.168.1.0/24 to any port 1514
+sudo ufw allow from 192.168.1.0/24 to any port 1515
+
+# Enforce Default-Deny for all other traffic
+sudo ufw default deny incoming
+sudo ufw enable
+```
+
+**Evidence of SOC Hardening:**
+
+![Wazuh Manager Firewall Rule Change](Screenshots/Wazuh-Firewall-changes.png)
+
+*Figure 7: Final UFW rule-set on the Wazuh Manager ensuring administrative isolation.*
+
+---
+
+### Why this addition is powerful:
+1. **Critical Thinking:** It shows you didn't just stop at the "victim" server. You realized that the server holding the logs is just as important.
+2. **Technical Specificity:** You specifically mentioned ports like **55000** and **1514**, which shows you've actually studied how Wazuh functions under the hood.
+3. **The "Admin Workstation" Concept:** You are reinforcing the idea of a **Management Enclave**, a core principle in enterprise security.
+
